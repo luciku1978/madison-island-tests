@@ -16,10 +16,12 @@ public class ShoppingCartTest {
     public void addToCartFromSearchResultsTest(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://fasttrackit.org/selenium-test/");
+        System.out.println("Opened homepage.");
 
         String keyword = "vase";
 
         driver.findElement(By.className("input-text")).sendKeys("vase" + Keys.ENTER);
+        System.out.println("Pressed enter in search fiels.");
 
         String productName = "Herald Glass Vase";
         driver.findElement(By.xpath
