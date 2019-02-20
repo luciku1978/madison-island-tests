@@ -15,8 +15,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class SearchTest {
     @Test
     public  void searchByOneKeywordTest(){
+//        System.setProperty("webdriver.chrome.driver",AppConfig.getChromeDriverPath());
+        System.out.println(System.getProperty("webdriver.chrome.driver"));
         WebDriver driver = new ChromeDriver();
-        driver.get("https://fasttrackit.org/selenium-test/");
+        driver.get(AppConfig.getSiteUrl());
 
         String keyword = "vase";
 //        driver.findElement(By.id("search")).sendKeys("vase" + Keys.ENTER);
