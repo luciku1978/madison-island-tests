@@ -1,10 +1,12 @@
 package org.fasttrackit;
 
+import org.fasttrackit.pageobjects.Header;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import static java.lang.Thread.sleep;
 
@@ -14,10 +16,11 @@ public class ProductChangingColorTest {
     public void changeTheColorForItemFromSearchResultsTest() {
 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://fasttrackit.org/selenium-test/");
+        driver.get(AppConfig.getSiteUrl());
         System.out.println("Opened homepage.");
 
         String keyword = "vase";
+        Header header = PageFactory.initElements(driver,Header.class);
 
         driver.findElement(By.className("input-text")).sendKeys("vase" + Keys.ENTER);
 
